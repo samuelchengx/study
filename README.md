@@ -14,13 +14,13 @@
 
     vi config
     # gitee
-    Host gitee.com
+    Host ssh_for_mac
     HostName gitee.com
     PreferredAuthentications publickey
     IdentityFile ~/.ssh/gitee_id_rsa
 
     # github
-    Host github.com
+    Host github_id_rsa
     HostName github.com
     PreferredAuthentications publickey
     IdentityFile ~/.ssh/github_id_rsa
@@ -33,3 +33,9 @@
     [user]
 	    name = samuelcheng
 	    email = chengxx@knowbox.cn
+
+   `
+     ~/.ssh/config中的hostname分别指向不同的ssh key title
+      ssh_for_mac    for gitee
+      github_id_rsa  for github
+   `
