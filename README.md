@@ -31,11 +31,9 @@
     	email = chengxx@knowbox.cn
 
     [user]
-	    name = samuelcheng
-	    email = chengxx@knowbox.cn
+	    name = samuelchengx
+	    email = 676822037@qq.com
 
-   `
-     ~/.ssh/config中的hostname分别指向不同的ssh key title
-      ssh_for_mac    for gitee
-      github_id_rsa  for github
-   `
++ ~/.ssh/config中的hostname分别指向不同的ssh key title
++ssh_for_mac    for gitee
++github_id_rsa  for github
