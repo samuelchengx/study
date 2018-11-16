@@ -2,15 +2,13 @@
 
 ## nginx安装
 
-+ 网址： http://nginx.org/
+> 网址： http://nginx.org/
 
 下载nginx-> 介绍目录 -> Configure -> 中间文件介绍 -> 编译 -> 安装
 
 ```
 curl -O http://nginx.org/download/nginx-1.14.1.tar.gz
-
 tar -xzf nginx-1.14.1.tar.gz
-
 ```
 
 ```
@@ -26,7 +24,6 @@ drwxr-xr-x@  4 samuelcheng  staff     128 11  6 21:52 html
 drwxr-xr-x@  3 samuelcheng  staff      96 11  6 21:52 man
 -rw-r--r--@  1 samuelcheng  staff      49 11  6 21:52 README
 drwxr-xr-x@  9 samuelcheng  staff     288 11  6 21:52 src
-
 ```
 
 了解每个文件目录的功能，细节不解释
@@ -108,28 +105,30 @@ http {
 
 ## nginx命令行
 
-- 格式:nginx -s reload
-- 帮助:-? -h
-- 使用指定的配置文件:-c
-- 指定配置指令:-g
-- 指定运行目录:-p
-- 立刻停止服务:stop
-- 优雅的停止服务:quit
-- 重载配置文件:reload
-- 重新开始记录日志文件: reopen
-- 发送信号:-s
-- 测试配置文件是否有语法错误:-t -T
-- 打印nginx的版本信息、编译信息等:-v -V
+| 名称                       |  命令             |
+| :------------------------ |  : -----------:   |
+| 格式                       |  nginx -s reload |
+| 帮助                       |  -? -h           |
+| 使用指定的配置文件            |  -c              |
+| 指定配置指令                 |  -g              |
+| 指定运行目录                 |  -p               |
+| 立刻停止服务                 |  stop             |
+| 优雅的停止服务               |  quit             |
+| 重载配置文件                 |  reload             |
+| 重新开始记录日志文件           |  reopen             |
+| 发送信号                     |  -t -T             |
+| 测试配置文件是否有语法错误      |   -t -T             |
+| 打印nginx的版本信息、编译信息等 |  -v -V             |
 
 
-重载配置文件
+
+**重载配置文件**
 
 ```
 sudo /usr/***/sbin/nginx -s reload
 ```
 
-热部署
-
+**热部署**
 
 ```
 ➜ ps -ef | grep nginx
@@ -143,7 +142,13 @@ sudo /usr/***/sbin/nginx -s reload
 - kill -USR2 20573，此时生成新的nginx进程，老的work也在运行，但是不在监听
 - kill -WINCH 20573 发送信号，优雅的关闭老的nginx进程
 
-切割日志文件
+**切割日志文件**
+
+```javascript
+function fn(arr){
+    return Array.isArray(arr)
+}
+```
 
 
 
