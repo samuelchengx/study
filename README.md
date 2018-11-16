@@ -2,7 +2,7 @@
 
     cd ~/.ssh
     ssh-keygen -t rsa -C "676822037@qq.com" -f "github_id_rsa"
-    ssh-keygen -t rsa -C "chengxx@knowbox.cn" -f "gitee_id_rsa"
+    ssh-keygen -t rsa -C "chengxx@xxxx.cn" -f "gitee_id_rsa"
 
 
     ls -l
@@ -28,7 +28,7 @@
     vim ~/.gitconfig
     [user]
     	name = samuelcheng
-    	email = chengxx@knowbox.cn
+    	email = chengxx@xxxx.cn
 
     [user]
 	    name = samuelchengx
