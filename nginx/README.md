@@ -110,23 +110,25 @@ sbin为启动文件
 
 
 重载配置文件
-sudo /usr/***/sbin/nginx -s reload
+
+    sudo /usr/***/sbin/nginx -s reload
 
 热部署
+
+
     ➜ ps -ef | grep nginx
     0 20573     1   0 二04下午 ??         0:00.05 nginx: master process ./nginx
     -2 32430 20573   0 三06下午 ??         0:01.45 nginx: worker process
     -2 32431 20573   0 三06下午 ??         0:01.02 nginx: cache manager process
 
--备份nginx文件 cp sbin/nginx  sbin/nginx.old
 
--将新编译的nginx文件copy到sbin/下，此时向正在运行的nginx的master进程发送信号
+- 备份nginx文件 cp sbin/nginx  sbin/nginx.old
+
+- 将新编译的nginx文件copy到sbin/下，此时向正在运行的nginx的master进程发送信号
 
 - kill -USR2 20573，此时生成新的nginx进程，老的work也在运行，但是不在监听
 
 - kill -WINCH 20573 发送信号，优雅的关闭老的nginx进程
-
-
 
 
 切割日志文件
