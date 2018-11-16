@@ -42,7 +42,6 @@ drwxr-xr-x@  9 samuelcheng  staff     288 11  6 21:52 src
 
 ```
 ./configure --prefix=PATH
-
 ```
 
 - 生成中间文件objs , ngx_modules.c包含被编译进nginx的模块都会形成数组
@@ -80,29 +79,31 @@ drwx------   2 nobody       admin   64 11 13 16:16 uwsgi_temp
 
 ## nginx语法
 
-    http {
-        include       mime.types;
-        default_type  application/octet-stream;
+```
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
 
-        #配置上游服务器
-        include  vhost/virtual_server1.conf;
-        upstream local {
-            server 127.0.0.1:8080;
+    #配置上游服务器
+    include  vhost/virtual_server1.conf;
+    upstream local {
+        server 127.0.0.1:8080;
+    }
+    server {
+        listen       80;
+        server_name  192.168.26.173;
+        access_log  logs/learn.access.log  main;
+        location /report.html {
+          alias /usr/local/Cellar/nginx/html/report.html;
         }
-        server {
-            listen       80;
-            server_name  192.168.26.173;
-            access_log  logs/learn.access.log  main;
-            location /report.html {
-              alias /usr/local/Cellar/nginx/html/report.html;
-            }
-            location / {
-                alias /Users/samuelcheng/Project/science_frontend/test/;
-                autoindex on;
-                index  index.html index.htm;
-            }
+        location / {
+            alias /Users/samuelcheng/Project/science_frontend/test/;
+            autoindex on;
+            index  index.html index.htm;
         }
     }
+}
+```
 
 
 ## nginx命令行
@@ -123,7 +124,9 @@ drwx------   2 nobody       admin   64 11 13 16:16 uwsgi_temp
 
 重载配置文件
 
-    sudo /usr/***/sbin/nginx -s reload
+```
+sudo /usr/***/sbin/nginx -s reload
+```
 
 热部署
 
