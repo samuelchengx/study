@@ -134,9 +134,9 @@
             } else  {
                 // 计算结果不是数据或者是无穷大，意味着输入的数据是非法或不完整的
                 // 清空之前的输出数据
-                payment.innerHTML = '';
-                total.innerHTML = '';
-                totalinterest.innerHTML = '';
+                payment.innerHTML = '0.00';
+                total.innerHTML = '0.00';
+                totalinterest.innerHTML = '0.00';
                 chart(); //不传参数表示清除图表
             }
 

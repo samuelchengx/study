@@ -19,8 +19,7 @@ var allowCrossDomain = function(req, res, next) {
 app.use(allowCrossDomain);
 app.get('/getLenders', function (req,res) {
     var zip = req.query.zip
-
-    console.log('zip', zip)
+    // console.log('zip', zip)
     var resData = data.filter((item, index)=>{
         // console.log('item, index', item, index)
         return item.id == parseInt(zip);
@@ -30,8 +29,9 @@ app.get('/getLenders', function (req,res) {
     } else  {
         res.send(data);
     }
-
 });
 
-app.listen(8090);
+app.listen(8090, function () {
+    console.log('the server is listening at 8090 port');
+});
 
