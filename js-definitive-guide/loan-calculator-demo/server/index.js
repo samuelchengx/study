@@ -19,7 +19,7 @@ var allowCrossDomain = function(req, res, next) {
 app.use(allowCrossDomain);
 app.get('/getLenders', function (req,res) {
     var zip = req.query.zip
-    // console.log('zip', zip)
+    console.log('zip', zip)
     var resData = data.filter((item, index)=>{
         // console.log('item, index', item, index)
         return item.id == parseInt(zip);

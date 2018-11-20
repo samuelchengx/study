@@ -1,7 +1,7 @@
 
 ## React出现背景
 
-google工程师开发一个菜单栏频繁出bug，当然不是google工程师太水，需要深层思考发生问题的原因
+facebook工程师开发一个菜单栏频繁出bug，当然不是facebook工程师太水，需要深层思考发生问题的原因
 
 ### 传统DOM API 关注太多细节
 
@@ -85,5 +85,35 @@ Props + State => View
 ### 何时创建组件： 单一职责原则
 - 1、每个组件只做一件事
 - 2、如果组件变得复杂，那么应该拆分成小组件
+
+### 数据状态管理原则： DRY原则 Don’t Repeat Yourself
+
+- 能计算得到的状态，就不要单独存储
+- 组件尽量无状态，所需数据通过props获取
+
+## JSX本质是语法糖而不是模版引擎
+
+- 语法糖使得JS语法看上去像模板，但完全不是模板引擎，不需要学习模板语法。
+
+- JSX本质就是：动态创建组件的语法糖
+
+### 在JSX中使用表达式
+
+- 1、JSX本身也是表达式 const element = <h1>hello world!</h1>
+- 2、在属性中使用表达式 <MyComponent foo={1+2+3+4} />
+- 3、延展属性 const props = {firstName: 'Ben', lastName: 'Hector' } const greeting = <Greeting {...props} />
+- 4、表达式作为子元素 const element = <h1>{props.message}</h1>
+
+### JSX优点
+
+- 声明式创建界面的直观
+- 代码动态创建的灵活
+- 无需学习新的模版语言
+
+
+
+
+
+
 
 

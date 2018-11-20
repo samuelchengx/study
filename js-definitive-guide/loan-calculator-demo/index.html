@@ -140,6 +140,13 @@
                 chart(); //不传参数表示清除图表
             }
 
+            /**
+             *
+             * @param amount
+             * @param apr
+             * @param years
+             * @param zipcode
+             */
             function save(amount, apr, years, zipcode) {
                 if(window.localStorage){
                     localStorage.loan_amount = amount;
@@ -163,6 +170,13 @@
             // 将用户的输入发送到服务器端脚本
             // 返回一个本地放贷人的链接列表
             // 但如果该服务存在， 该函数会使用它
+            /**
+             *
+             * @param amount
+             * @param apr
+             * @param years
+             * @param zipcode
+             */
             function getLenders(amount, apr, years, zipcode) {
                 // 如果浏览器不支持XMLHttpRequest对象，则推出
                 if(!window.XMLHttpRequest) return;
@@ -200,11 +214,17 @@
                         ad.innerHTML = '<ul>' + list + '</ul>';
                     }
                 }
-
             }
 
             // 在HTML <canvas>元素中用图表展示月度贷款余额、利息和资产收益
             // 如果不传入参数，则清空之前的图表数据
+            /**
+             *
+             * @param principal
+             * @param interest
+             * @param monthly
+             * @param payment
+             */
             function chart(principal, interest, monthly, payment) {
                 var graph = document.getElementById('graph');
                 graph.width = graph.width;
@@ -298,6 +318,9 @@
             }
         }
 
+        /**
+         *
+         */
         function getLocalData () {
             if(window.localStorage && localStorage.loan_amount){
                 document.getElementById('amount').value = localStorage.loan_amount;
