@@ -102,7 +102,7 @@ Props + State => View
 - 1、JSX本身也是表达式 const element = <h1>hello world!</h1>
 - 2、在属性中使用表达式 <MyComponent foo={1+2+3+4} />
 - 3、延展属性 const props = {firstName: 'Ben', lastName: 'Hector' } const greeting = <Greeting {...props} />
-- 4、表达式作为子元素 const element = <h1>{props.message}</h1>
+- 4、表达式作为子元素 const element = '<h1>{props.message}</h1>'
 
 ### JSX优点
 
@@ -110,10 +110,56 @@ Props + State => View
 - 代码动态创建的灵活
 - 无需学习新的模版语言
 
+## React组件的生命周期及其使用场景
+
+### constructor
+
+- 用于初始化内部状态，很少使用
+- 唯一可以直接修改state的地方
+
+### getDerivedStateFromProps
+
+- 当state需要从props初始化时使用
+- 尽量不使用： 维护两者状态一致性会增加复杂度
+- 每次render都会调用
+- 典型场景：表单控件获取默认值
+
+### componentDidMount
+
+- ui渲染完成后调用
+- 只执行一次
+- 典型场景：获取外部资源
+
+### componentWillMount
+
+- 组件移除时被调用
+- 典型场景：资源释放
+
+### getSnapshotBeforeUpdate
+
+- 在页面render之前调用，state已更新
+- 典型场景：获取render之前的DOM状态
+
+### componentDidUpdate
+
+- 每次ui更新时被调用
+- 典型场景：页面需要根据props变化重新获取数据
+
+### shouldComponentUpdate
+
+- 决定Virtual DOM是否要重绘
+- 一般可以由PureComponent自动实现
+- 典型场景： 性能优化
 
 
+## 理解Virtual DOM及key属性的作用
+
+- jsx运行基础：Virtual DOM
 
 
+## 组件设计模式 : 高阶组件和函数作为子组件
 
+组件复用的两种形式：高阶组件和函数作为子组件
 
+高阶组件：接受组件作为参数，返回新的组件
 
