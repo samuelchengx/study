@@ -1,8 +1,8 @@
 
 import Vue from 'vue'
-import wx from 'weixin-js-sdk'
+import wx from 'weixin-js-amd-sdk'
 import ajax from '@/api/ajax'
-import storage from '@/assets/js/storage'
+import storage from '@/assets/js-amd/storage'
 
 export default async function wxShare(shareObj) {
     let wxconfig = null, url = location.href, isiOS = !!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)
